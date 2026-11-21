@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guilherme · Portfólio</title>
+  <meta name="description" content="Jogador profissional de poker, gerente de time e desenvolvedor. Ferramentas para gestão de times de poker e IA aplicada.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="#top"><span class="chip">♠</span> Guilherme</a>
+    <nav>
+      <a href="#projetos">Projetos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="https://github.com/GuilhermeSGL" class="btn ghost">GitHub</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow">Poker profissional · Gestão de time · Software</p>
+      <h1>Eu jogo, gerencio jogadores<br>e escrevo as ferramentas que faltam.</h1>
+      <p class="lead">Sou jogador profissional de poker e gerente de time. Transformo a rotina de gestão (resultado, makeup, volume, evolução de cada player) em software, e uso IA no dia a dia para automatizar o que se repete.</p>
+      <div class="cta">
+        <a class="btn" href="https://guilhermesgl.github.io/poker-team-manager/">Ver o painel do time ao vivo</a>
+        <a class="btn ghost" href="#projetos">Todos os projetos</a>
+      </div>
+      <ul class="facts">
+        <li><b>6</b><span>projetos públicos</span></li>
+        <li><b>36</b><span>testes automatizados</span></li>
+        <li><b>3</b><span>linguagens: Python, Java, JavaScript</span></li>
+      </ul>
+    </section>
+
+    <section id="projetos">
+      <h2 class="section-title">Projetos</h2>
+
+      <article class="feature">
+        <div class="feature-text">
+          <p class="tag">Poker · Gestão</p>
+          <h3>Poker Team Manager</h3>
+          <p>Painel para gerenciar um time de poker com stake. Importa o relatório semanal do site de cada player, mede o volume contra a meta com semáforo, aponta alertas (volume baixo, ABI acima do combinado, makeup crescendo, player sem reunião) e gera o resumo pronto para mandar no WhatsApp.</p>
+          <ul class="bullets">
+            <li>Ficha do player com radar de evolução em 11 competências e histórico de reuniões</li>
+            <li>Acerto de pacote com makeup em um clique</li>
+            <li>Sem build: HTML, CSS e JavaScript puro, 22 testes com <code>node:test</code></li>
+          </ul>
+          <div class="links">
+            <a class="btn small" href="https://guilhermesgl.github.io/poker-team-manager/">Abrir demo</a>
+            <a class="btn small ghost" href="https://github.com/GuilhermeSGL/poker-team-manager">Código</a>
+          </div>
+        </div>
+        <figure class="shots">
+          <img src="img/semana.jpg" alt="Fechamento semanal do time com semáforo de metas e alertas" loading="lazy">
+          <img src="img/ficha.jpg" alt="Ficha do player com radar de evolução técnica" loading="lazy">
+        </figure>
+      </article>
+
+      <div class="grid">
+        <article class="card">
+          <p class="tag">Poker · Análise</p>
+          <h3>poker-hand-analyzer</h3>
+          <p>Lê hand histories da PokerStars e calcula as estatísticas de HUD (VPIP, PFR, 3-bet, AF, WTSD, bb/100), classifica o estilo de cada jogador e aponta leaks para coaching.</p>
+<pre class="term"><code>$ python -m pokerhud samples
+Jogador  Mãos  VPIP  PFR  3bet  bb/100
+Hero        6   83%  50%   33%  +1840
+Dave        6   33%   0%    0%   +288
+• Dave: pagando demais pré-flop</code></pre>
+          <p class="stack">Python puro · 14 testes</p>
+          <a class="more" href="https://github.com/GuilhermeSGL/poker-hand-analyzer">Ver código →</a>
+        </article>
+
+        <article class="card">
+          <p class="tag">IA aplicada</p>
+          <h3>ai-workstation</h3>
+          <p>Como transformei o Claude Code em uma camada de operação do meu PC: memória compartilhada entre sessões, conectores (Notion, Google, Trello, Gmail), agentes e regras de segurança com humano no controle.</p>
+          <p class="stack">Claude Code · MCP · Basic Memory</p>
+          <a class="more" href="https://github.com/GuilhermeSGL/ai-workstation">Ver arquitetura →</a>
+        </article>
+
+        <article class="card">
+          <p class="tag">IA aplicada · Voz</p>
+          <h3>Assistente de voz</h3>
+          <p>Assistente para Windows que atende pelo nome: ativação offline, transcrição local, Claude Code como cérebro, resposta em voz neural e leitura da tela. Pede confirmação antes de qualquer ação sensível.</p>
+          <p class="stack">Python · Vosk · faster-whisper · edge-tts</p>
+          <a class="more" href="https://github.com/GuilhermeSGL/claudio-voice-assistant">Ver código →</a>
+        </article>
+
+        <article class="card">
+          <p class="tag">Desktop · IA</p>
+          <h3>ChatIA</h3>
+          <p>Chat desktop com IA: contas com senha em BCrypt, histórico salvo na nuvem e RAG sobre uma base de conhecimento própria, consultada antes de cada resposta.</p>
+          <p class="stack">Java 21 · JavaFX · MongoDB Atlas · Groq</p>
+          <a class="more" href="https://github.com/GuilhermeSGL/chatia-javafx-rag">Ver código →</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="sobre" class="about">
+      <h2 class="section-title">Sobre</h2>
+      <div class="about-grid">
+        <div>
+          <p>No poker, eu jogo e cuido de um time: acompanho resultado, volume e makeup de cada jogador, faço reuniões, monto planos de estudo e decido stake e coaching a partir dos números.</p>
+          <p>Como desenvolvedor, construo as ferramentas que essa rotina pede. Quando uma tarefa se repete, ela vira planilha, script, painel ou agente de IA.</p>
+        </div>
+        <ul class="pillars">
+          <li><b>Gestão com dados</b><span>resultado, volume e evolução de cada player viram decisão de stake e coaching</span></li>
+          <li><b>Automação</b><span>do relatório semanal ao resumo enviado ao player, com o mínimo de trabalho manual</span></li>
+          <li><b>IA com responsabilidade</b><span>agentes que ajudam de verdade, com humano no controle das ações sensíveis</span></li>
+        </ul>
+      </div>
+      <p class="stack-line"><span>Python</span><span>Java</span><span>JavaScript</span><span>HTML/CSS</span><span>MongoDB</span><span>Git</span><span>Claude Code / MCP</span><span>APIs de LLM</span></p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <a href="https://github.com/GuilhermeSGL">github.com/GuilhermeSGL</a>
+    <span>Página e projetos construídos em parceria com o Claude Code.</span>
+  </footer>
+</body>
+</html>
