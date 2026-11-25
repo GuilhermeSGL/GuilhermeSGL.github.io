@@ -22,8 +22,8 @@
   color-scheme:dark;
 }
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;min-height:100vh;background:var(--cosmos);color:var(--texto);font:16px/1.5 var(--f-texto);overflow-x:hidden;
+html{-webkit-text-size-adjust:100%;background:var(--cosmos);overflow-x:clip}
+body{margin:0;min-height:100vh;background:transparent;color:var(--texto);font:16px/1.5 var(--f-texto);overflow-x:hidden;
   background-image:
     radial-gradient(ellipse 70% 40% at 50% 8%,rgba(212,166,74,.30),transparent 70%),
     radial-gradient(ellipse 40% 30% at 8% 20%,rgba(40,160,200,.22),transparent 70%),
@@ -37,19 +37,28 @@ body{margin:0;min-height:100vh;background:var(--cosmos);color:var(--texto);font:
     radial-gradient(1.5px 1.5px at 18% 70%,rgba(246,217,142,.6) 50%,transparent 51%),
     radial-gradient(1px 1px at 84% 80%,rgba(255,255,255,.5) 50%,transparent 51%);
   background-attachment:fixed}
+body::before{content:"";position:fixed;inset:0;z-index:-2;background:url(img/cosmos-fundo.jpg) center 18%/cover no-repeat;transform:scale(1.08)}
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(ellipse 120% 70% at 50% 30%,transparent 30%,rgba(7,7,12,.55) 75%,rgba(7,7,12,.85) 100%),
+  radial-gradient(1px 1px at 12% 18%,rgba(255,255,255,.8) 50%,transparent 51%),radial-gradient(1px 1px at 78% 9%,rgba(255,255,255,.6) 50%,transparent 51%),
+  radial-gradient(1.5px 1.5px at 64% 32%,rgba(246,217,142,.8) 50%,transparent 51%),radial-gradient(1px 1px at 30% 46%,rgba(159,220,255,.7) 50%,transparent 51%),
+  radial-gradient(1px 1px at 90% 54%,rgba(255,255,255,.55) 50%,transparent 51%),radial-gradient(1.5px 1.5px at 18% 70%,rgba(246,217,142,.7) 50%,transparent 51%),
+  radial-gradient(1px 1px at 84% 80%,rgba(255,255,255,.6) 50%,transparent 51%),radial-gradient(1px 1px at 46% 90%,rgba(159,220,255,.6) 50%,transparent 51%)}
 a{color:inherit}
 img{max-width:100%;display:block}
 .pagina{max-width:600px;margin:0 auto;padding:max(28px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;align-items:center;text-align:center}
 
 /* Topo */
-.emblema{width:min(58vw,240px);aspect-ratio:340/260;object-fit:cover;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 62%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 62%,transparent 100%)}
+.logo-razan{width:100%;height:auto;max-width:600px;margin:-6px 0 0;aspect-ratio:1136/920;object-fit:cover;
+  -webkit-mask-image:radial-gradient(ellipse 52% 54% at 50% 48%,#000 58%,transparent 100%);mask-image:radial-gradient(ellipse 52% 54% at 50% 48%,#000 58%,transparent 100%)}
 .ouro-metal{background:linear-gradient(180deg,#fff3c4 0%,var(--ouro-claro) 30%,var(--ouro) 55%,var(--ouro-escuro) 75%,var(--ouro-claro) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .marca{font-family:var(--f-marca);font-weight:700;font-size:clamp(3.2rem,17vw,5.2rem);line-height:1;letter-spacing:.03em;margin:4px 0 0;filter:drop-shadow(0 0 18px rgba(212,166,74,.35))}
 .sub-marca{display:flex;align-items:center;gap:12px;width:100%;max-width:440px;font-family:var(--f-marca);font-weight:600;letter-spacing:.42em;font-size:clamp(1rem,5vw,1.35rem);color:var(--ouro);margin-top:6px}
 .sub-marca::before,.sub-marca::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--ouro))}
 .sub-marca::after{background:linear-gradient(90deg,var(--ouro),transparent)}
-h1{margin:22px 0 0;font-size:clamp(1.45rem,6.6vw,2rem);line-height:1.25;font-weight:600;text-wrap:balance}
-h1 span{display:block;color:var(--ouro-claro);font-weight:700}
+.slogan{margin:6px 0 0;font-size:clamp(1.45rem,6.6vw,2rem);line-height:1.25;font-weight:600;text-wrap:balance}
+.slogan span{display:block;color:var(--ouro-claro);font-weight:700}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .divisor{width:100%;max-width:520px;height:16px;margin:16px 0 6px;background:radial-gradient(circle at 50% 50%,#fff 0 1.5px,var(--ouro-claro) 2px,transparent 7px),linear-gradient(90deg,transparent,rgba(212,166,74,.7),transparent) center/100% 1px no-repeat}
 .convite{margin:0;color:var(--texto-2);font-size:1.02rem}
 
@@ -62,7 +71,7 @@ h1 span{display:block;color:var(--ouro-claro);font-weight:700}
 .cartao p{margin:0;font-size:.86rem;line-height:1.45;color:var(--texto)}
 .acao{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border-radius:999px;font-weight:700;font-size:.9rem;margin-top:4px}
 
-.razan{background:linear-gradient(120deg,#1a1205,#0b0a08 60%);border:2px solid var(--ouro);box-shadow:0 0 0 1px rgba(246,217,142,.25) inset,0 0 26px rgba(212,166,74,.45),0 0 60px rgba(212,166,74,.15)}
+.razan{background:linear-gradient(120deg,rgba(26,18,5,.92),rgba(11,10,8,.85) 60%);backdrop-filter:blur(3px);border:2px solid var(--ouro);box-shadow:0 0 0 1px rgba(246,217,142,.25) inset,0 0 26px rgba(212,166,74,.45),0 0 60px rgba(212,166,74,.15)}
 .razan .foto{height:100%;min-height:200px;background:url(img/impressora.jpg) center/cover;-webkit-mask-image:linear-gradient(90deg,#000 70%,transparent);mask-image:linear-gradient(90deg,#000 70%,transparent)}
 .razan .mini-marca{font-family:var(--f-marca);font-weight:700;font-size:clamp(1.7rem,8vw,2.4rem);line-height:1}
 .razan .mini-sub{font-family:var(--f-marca);letter-spacing:.38em;font-size:.78rem;color:var(--ouro);margin-top:-2px}
@@ -72,7 +81,7 @@ h1 span{display:block;color:var(--ouro-claro);font-weight:700}
     linear-gradient(90deg,rgba(24,194,124,.18) 1px,transparent 1px) 0 0/22px 22px,
     linear-gradient(0deg,rgba(24,194,124,.10) 1px,transparent 1px) 0 0/22px 22px,
     radial-gradient(ellipse at 20% 50%,#0b5a3a,transparent 60%),
-    linear-gradient(120deg,#063a26,#04150f 70%);
+    linear-gradient(120deg,rgba(6,58,38,.92),rgba(4,21,15,.86) 70%);
   border:2px solid var(--verde);box-shadow:0 0 0 1px rgba(120,255,190,.25) inset,0 0 26px rgba(24,194,124,.55),0 0 60px rgba(24,194,124,.18)}
 .fato .chip{width:86%;max-width:180px;height:auto;aspect-ratio:285/270;object-fit:cover;margin:14px auto;border-radius:22px;box-shadow:0 0 22px rgba(24,194,124,.55)}
 .marca-fato{font-family:var(--f-fato);font-style:italic;font-weight:900;font-size:clamp(1.6rem,7.6vw,2.5rem);line-height:1;letter-spacing:-.01em;white-space:nowrap}
@@ -90,7 +99,7 @@ h1 span{display:block;color:var(--ouro-claro);font-weight:700}
 
 /* Rodapé com planeta */
 .rodape{width:100%;margin-top:24px;position:relative}
-.rodape img{width:100%;height:auto;-webkit-mask-image:linear-gradient(180deg,transparent,#000 35%);mask-image:linear-gradient(180deg,transparent,#000 35%)}
+.rodape img{width:100%;height:auto;opacity:.95;-webkit-mask-image:linear-gradient(180deg,transparent,#000 35%);mask-image:linear-gradient(180deg,transparent,#000 35%)}
 .rodape p{margin:0;padding:14px 0 max(22px,env(safe-area-inset-bottom,0px));font-family:var(--f-marca);font-weight:600;letter-spacing:.24em;font-size:clamp(.62rem,2.8vw,.82rem);color:var(--ouro);border-top:1px solid rgba(212,166,74,.45)}
 
 @media (max-width:360px){.cartao{grid-template-columns:38% 1fr}.cartao p{font-size:.8rem}}
@@ -99,10 +108,9 @@ h1 span{display:block;color:var(--ouro-claro);font-weight:700}
 </head>
 <body>
 <main class="pagina">
-  <img class="emblema" src="img/emblema.jpg" alt="" width="340" height="260">
-  <div class="marca ouro-metal">RAZAN</div>
-  <div class="sub-marca">ESTÚDIO</div>
-  <h1>Ideias que ganham forma. <span>Tecnologia que conecta.</span></h1>
+  <h1 class="sr-only">RAZAN Studio</h1>
+  <img class="logo-razan" src="img/razan-logo.jpg" alt="RAZAN Studio: triângulo dourado com uma galáxia em espiral" width="1136" height="920">
+  <p class="slogan">Ideias que ganham forma. <span>Tecnologia que conecta.</span></p>
   <div class="divisor" aria-hidden="true"></div>
   <p class="convite">Explore nossas criações, soluções e projetos.</p>
 
@@ -111,7 +119,7 @@ h1 span{display:block;color:var(--ouro-claro);font-weight:700}
       <div class="foto" role="img" aria-label="Impressora 3D imprimindo um vaso dourado"></div>
       <div class="lado-texto">
         <div class="mini-marca ouro-metal">RAZAN</div>
-        <div class="mini-sub">ESTÚDIO</div>
+        <div class="mini-sub">STUDIO</div>
         <p>Impressão 3D, produtos personalizados e, em breve, um estúdio completo de criação e produção.</p>
         <span class="acao">VER O CATÁLOGO →</span>
       </div>
