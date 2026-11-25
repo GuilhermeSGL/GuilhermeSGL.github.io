@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>RAZAN Studio Catálogo</title>
+<meta name="description" content="Catálogo da RAZAN Studio, estúdio de criação e impressão 3D.">
+</head><body>
+
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: uma coluna estreita tipo "link na bio" no celular; no computador o catálogo abre em grade de 2–3 colunas sob um cabeçalho centrado no emblema. Visual único, escuro (preto cósmico), por escolha da marca. */
+:root {
+  --bg: #0b0b12;          /* preto cósmico */
+  --bg-2: #12121c;        /* superfície */
+  --line: #262436;        /* bordas finas, levemente violeta */
+  --fg: #ece9e1;          /* texto principal */
+  --muted: #a3a0ad;       /* prata fosca */
+  --gold: #c9a227;        /* ouro alquímico */
+  --gold-soft: #e4c766;
+  --blue: #2e6bff;        /* azul energético */
+  --green: #1f7a5c;       /* verde profundo, clareado para ler no escuro */
+  --f-display: "Marcellus", "Cinzel", Georgia, serif;
+  --f-body: "Manrope", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--f-body);
+  font-size: 15px;
+  line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 48px;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, #ffffff55 50%, transparent 51%),
+    radial-gradient(1px 1px at 78% 9%, #ffffff40 50%, transparent 51%),
+    radial-gradient(1.4px 1.4px at 64% 31%, #e4c76655 50%, transparent 51%),
+    radial-gradient(1px 1px at 30% 52%, #ffffff30 50%, transparent 51%),
+    radial-gradient(1px 1px at 88% 61%, #ffffff35 50%, transparent 51%),
+    radial-gradient(900px 520px at 50% -120px, #2e6bff1f, transparent 70%);
+  background-attachment: fixed;
+}
+.wrap { max-width: 1040px; margin: 0 auto; display: grid; gap: 40px; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--gold-soft); outline-offset: 3px; border-radius: 6px; }
+
+/* Cabeçalho */
+.hero { display: grid; justify-items: center; text-align: center; gap: 14px; padding-top: 40px; }
+.emblem { width: 112px; height: 112px; }
+.emblem .orbit { transform-origin: 60px 60px; animation: orbit 38s linear infinite; }
+.emblem .orbit.two { animation-duration: 54s; animation-direction: reverse; }
+@keyframes orbit { to { transform: rotate(360deg); } }
+.brand { font-family: var(--f-display); font-size: clamp(2.1rem, 7vw, 3.1rem); letter-spacing: .14em; margin: 0; line-height: 1.05; text-wrap: balance; }
+.brand small { display: block; font-size: .36em; letter-spacing: .5em; color: var(--gold); margin-top: 10px; }
+.motto { font-family: var(--f-display); font-size: 1.1rem; color: var(--muted); margin: 0; font-style: italic; }
+.where { font-family: var(--f-mono); font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0; }
+
+/* Links */
+.links { display: grid; gap: 10px; width: 100%; max-width: 460px; margin: 0 auto; }
+.link {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 14px 18px; border: 1px solid var(--line); border-radius: 14px;
+  background: var(--bg-2); text-decoration: none; font-weight: 600;
+  transition: border-color .2s, transform .2s;
+}
+.link:hover { border-color: var(--gold); transform: translateY(-1px); }
+.link.primary { background: linear-gradient(135deg, #c9a227, #8f7019); color: #0b0b12; border-color: transparent; }
+.link.primary .tag { color: #0b0b12cc; }
+.link.off { opacity: .5; pointer-events: none; }
+.link .tag { font-family: var(--f-mono); font-size: .7rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+
+/* Seções */
+section { display: grid; gap: 18px; }
+.eyebrow { font-family: var(--f-mono); font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin: 0; }
+h2 { font-family: var(--f-display); font-weight: 400; font-size: clamp(1.6rem, 4.5vw, 2.1rem); margin: 0; text-wrap: balance; }
+.lede { color: var(--muted); margin: 0; max-width: 62ch; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  font: 600 .82rem var(--f-body); color: var(--fg); background: transparent;
+  border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px; cursor: pointer;
+}
+.chip[aria-pressed="true"] { border-color: var(--gold); color: var(--gold-soft); background: #c9a22714; }
+
+/* Produtos */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr)); gap: 18px; }
+.card { display: grid; grid-template-rows: auto 1fr; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: var(--bg-2); min-width: 0; }
+.card.featured { border-color: #c9a22766; }
+.media { position: relative; aspect-ratio: 1 / 1; max-width: 100%; background: radial-gradient(circle at 50% 38%, #24223a, #0e0e16 70%); display: grid; place-items: center; }
+.media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.media svg { width: 46%; height: 46%; opacity: .85; }
+.status {
+  position: absolute; top: 12px; left: 12px; font: 500 .68rem var(--f-mono); letter-spacing: .1em; text-transform: uppercase;
+  padding: 5px 10px; border-radius: 999px; background: #0b0b12cc; border: 1px solid var(--line); color: var(--muted);
+}
+.status.pre { color: var(--gold-soft); border-color: #c9a22788; }
+.views { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; background: #0b0b12cc; padding: 5px; border-radius: 999px; border: 1px solid var(--line); }
+.views button { font: 500 .7rem var(--f-mono); color: var(--muted); background: none; border: 0; padding: 5px 10px; border-radius: 999px; cursor: pointer; }
+.views button[aria-pressed="true"] { background: var(--gold); color: #0b0b12; }
+.body { display: grid; gap: 10px; padding: 18px; align-content: start; }
+.line { font: 500 .7rem var(--f-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--green); }
+.card h3 { font-family: var(--f-display); font-weight: 400; font-size: 1.35rem; margin: 0; line-height: 1.2; }
+.card p { margin: 0; color: var(--muted); font-size: .92rem; }
+.specs { font: .76rem var(--f-mono); color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 12px; font-variant-numeric: tabular-nums; }
+.specs span::before { content: "◆ "; color: var(--gold); font-size: .6rem; vertical-align: 1px; }
+.buy { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 6px; padding-top: 14px; border-top: 1px solid var(--line); }
+.price { font-family: var(--f-display); font-size: 1.45rem; color: var(--gold-soft); font-variant-numeric: tabular-nums; }
+.price small { font: .7rem var(--f-mono); color: var(--muted); display: block; letter-spacing: .06em; }
+.ask { font: 700 .82rem var(--f-body); text-decoration: none; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--gold); color: var(--gold-soft); white-space: nowrap; background: none; cursor: pointer; }
+.ask:hover { background: #c9a2271a; }
+
+/* Processo */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 14px; counter-reset: s; }
+.steps li { counter-increment: s; border-left: 1px solid var(--line); padding: 4px 0 4px 18px; display: grid; gap: 4px; }
+.steps li::before { content: counter(s, upper-roman); font-family: var(--f-display); color: var(--gold); font-size: 1.2rem; }
+.steps strong { font-weight: 600; }
+.steps span { color: var(--muted); font-size: .9rem; }
+
+/* Compartilhar */
+.share { display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center; border: 1px solid var(--line); border-radius: 20px; padding: 22px; background: var(--bg-2); }
+.qr { width: 156px; height: 156px; background: #f4efe0; border-radius: 12px; padding: 10px; display: grid; place-items: center; }
+.qr img, .qr canvas { width: 100%; height: 100%; image-rendering: pixelated; }
+.share .body { padding: 0; }
+.url { font: .78rem var(--f-mono); color: var(--muted); word-break: break-all; user-select: all; }
+@media (max-width: 560px) { .share { grid-template-columns: 1fr; justify-items: center; text-align: center; } }
+
+footer { text-align: center; color: var(--muted); font-size: .8rem; display: grid; gap: 6px; }
+footer .motto { font-size: .95rem; }
+
+@media (prefers-reduced-motion: reduce) { .emblem .orbit { animation: none; } .link { transition: none; } }
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <svg class="emblem" viewBox="0 0 120 120" role="img" aria-label="Emblema da RAZAN Studio">
+      <defs>
+        <radialGradient id="core" cx="50%" cy="50%" r="50%">
+          <stop offset="0" stop-color="#fff6d6"/><stop offset=".45" stop-color="#e4c766"/><stop offset="1" stop-color="#c9a227" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <g class="orbit"><ellipse cx="60" cy="60" rx="54" ry="20" fill="none" stroke="#2e6bff" stroke-opacity=".55" stroke-width="1"/><circle cx="114" cy="60" r="2.4" fill="#2e6bff"/></g>
+      <g class="orbit two"><ellipse cx="60" cy="60" rx="20" ry="54" fill="none" stroke="#c0c4cc" stroke-opacity=".35" stroke-width="1"/><circle cx="60" cy="6" r="1.8" fill="#c0c4cc"/></g>
+      <path d="M60 18 L98 86 L22 86 Z" fill="none" stroke="#c9a227" stroke-width="2"/>
+      <path d="M60 64 m0 -2 a2 2 0 1 1 -2 2 a4 4 0 1 1 4 4 a6 6 0 1 1 -6 -6 a8.5 8.5 0 1 1 8.5 8.5" fill="none" stroke="#e4c766" stroke-width="1.4" stroke-linecap="round"/>
+      <circle cx="60" cy="64" r="9" fill="url(#core)"/>
+    </svg>
+    <h1 class="brand">RAZAN<small>STUDIO</small></h1>
+    <p class="motto">Entre a razão e o extraordinário.</p>
+    <p class="where">Impressão 3D autoral · Brasília, DF</p>
+  </header>
+
+  <nav class="links" id="links" aria-label="Canais da RAZAN"></nav>
+
+  <section aria-labelledby="t-cat">
+    <p class="eyebrow">Catálogo</p>
+    <h2 id="t-cat">Peças forjadas camada por camada</h2>
+    <p class="lede">Acessórios para a mesa de atendimento e miniaturas de Orixá. Cada peça é modelada, revisada e impressa no nosso estúdio, em PLA, com as cores escolhidas na encomenda. Produção sob encomenda: o prazo é confirmado no WhatsApp junto com o pedido.</p>
+    <div class="chips" role="group" aria-label="Filtrar por linha" id="chips"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section aria-labelledby="t-how">
+    <p class="eyebrow">Como encomendar</p>
+    <h2 id="t-how">Do pedido à sua mão</h2>
+    <ol class="steps">
+      <li><strong>Conversa</strong><span>Você escolhe a peça, o tamanho e as cores pelo WhatsApp.</span></li>
+      <li><strong>Prévia</strong><span>Peças personalizadas recebem uma imagem para aprovação antes de imprimir.</span></li>
+      <li><strong>Sinal de 50%</strong><span>Via Pix. O restante na entrega ou no envio.</span></li>
+      <li><strong>Forja e envio</strong><span>Impressão, acabamento e embalagem. Retirada em Brasília ou envio para todo o Brasil.</span></li>
+    </ol>
+  </section>
+
+  <section class="share" aria-labelledby="t-share">
+    <div class="qr" id="qr" aria-label="QR Code deste catálogo"></div>
+    <div class="body">
+      <p class="eyebrow">Compartilhe</p>
+      <h2 id="t-share">Leve o catálogo com você</h2>
+      <p class="lede">Aponte a câmera para o código ou copie o link para mandar a alguém.</p>
+      <p class="url" id="url"></p>
+      <div><button class="ask" id="copy" type="button">Copiar link</button></div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="motto">A razão concebe. A imaginação transcende. A criação transforma.</p>
+    <p>Peças decorativas em PLA. Miniaturas pequenas: indicadas para maiores de 3 anos. Preços para venda direta; podem mudar por tamanho e cores.</p>
+  </footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>
+/* ===== Ajuste aqui: contatos da RAZAN (deixe "" o que ainda não existe) ===== */
+const CONFIG = {
+  catalogo: "https://guilhermesgl.github.io/r/catalogo/",
+  whatsapp: "5561981484357",      // só números com DDI e DDD
+  instagram: "hazan_studio",     // usuário sem @
+  tiktok: "",
+  shopee: "",        // link completo da loja
+  mercadolivre: ""   // link completo da loja
+};
+
+const T = "terreiro", CG = "conga", TB = "tabacaria", BT = "baralho", AR = "articulados", EN = "encomenda", MN = "miniaturas";
+const NL = {miniaturas: "Miniaturas", terreiro: "Terreiro e Axé", conga: "Congá Modular", baralho: "Baralho e Tarô", tabacaria: "Tabacaria e Atendimento", articulados: "Articulados", encomenda: "Sob medida"};
+const P = (id, nome, linha, texto, specs, preco, status, ic, extra) => ({id, nome, linha, linhaNome: NL[linha], texto, specs, preco, status, ic, ...(extra || {})});
+const PRODUTOS = [
+  P("PEC-008", "Base de atendimento", TB, "Base redonda com lugar para cinzeiro metálico, 2 cachimbos, fósforo, isqueiro, 3 charutos, 6 cigarros, pemba e vela de LED.",
+    ["base redonda", "projeto próprio", "cinzeiro à parte"], "55,90", "Sob encomenda", "base", {destaque: true, fotos: {"Foto": "img/mk-pec-008.jpg"}}),
+  P("PEC-005", "Estojo de charuto", TB, "Estojo para charutos curtos, de 3 ou 4 lugares, com frisos para pegar firme.",
+    ["3 ou 4 lugares", "projeto próprio"], "28,90", "Sob encomenda", "estojo", {aPartir: true, fotos: {"Foto": "img/mk-pec-005.jpg"}}),
+  P("PEC-006", "Caixinha para 10 cigarros", TB, "Caixinha para cigarro curto ou longo, com painel para gravar um símbolo.",
+    ["65 ou 100 mm", "painel personalizável"], "24,90", "Sob encomenda", "estojo", {aPartir: true, fotos: {"Foto": "img/mk-pec-006.jpg"}}),
+  P("PEC-010", "Descanso de charuto", TB, "Bloco de mesa com 3 sulcos onde os charutos esperam apagados, sem rolar. Frisos nas laterais para pegar firme.",
+    ["3 charutos", "88 × 70 mm", "projeto próprio"], "26,90", "Sob encomenda", "base"),
+  P("PEC-013", "Mini Orixá 40 mm", MN, "Miniatura colecionável de 40 mm, nas cores da tradição. Para altar pequeno, estante ou presente.",
+    ["40 mm", "2 cores", "coleção"], "28,90", "Sob encomenda", "figura"),
+  P("PEC-004", "Abebé mini com suporte", MN, "Leque-espelho de Oxum em dourado ou de Iemanjá em prata e azul, com suporte de mesa.",
+    ["80 mm", "2 cores", "Oxum ou Iemanjá"], "27,90", "Sob encomenda", "abebe"),
+];
+
+// Em espera (decisão do dono 22/11: foco em 6 produtos). Não aparecem no catálogo público; ficam aqui para voltar depois.
+const EM_ESPERA = [
+  P("PEC-001", "Pomba Gira Rosa Negra", T, "Miniatura de 55 mm com vestido em camadas e rosas na base. Detalhe fino, pensada para altar, estante ou presente.",
+    ["55 mm", "PLA", "≈ 2,1 h de impressão"], "31,90", "Pré-venda", "figura",
+    {fotos: {"3/4": "img/pec-001_34.jpg", "Frente": "img/pec-001_frente.jpg", "Lado": "img/pec-001_lado.jpg"}, destaque: true}),
+  P("PEC-002", "Exu Caveira", T, "Figura de 56 mm em 2 cores, com olhal reforçado para usar como chaveiro ou pingente.",
+    ["56 mm", "2 cores", "chaveiro ou peça de altar"], "36,90", "Sob encomenda", "figura"),
+  P("T02", "Orixá em figura 55 mm", T, "Seu Orixá em figura de 55 mm, nas cores da tradição. Para altar, presente ou coleção.",
+    ["55 mm", "2 cores", "11 Orixás"], "36,90", "Sob encomenda", "figura"),
+  P("T01", "Chaveiro com símbolo do Orixá", T, "Símbolo e nome do Orixá em relevo, nas cores dele. Leve, resistente e feito para o dia a dia.",
+    ["50 mm", "2 a 3 cores", "11 Orixás e 9 entidades"], "14,90", "Sob encomenda", "chaveiro"),
+  P("T31", "Kit 7 Orixás", T, "Ogum, Oxóssi, Xangô, Iansã, Oxum, Exu e Pomba Gira em chaveiros com símbolo, numa caixinha para presentear.",
+    ["7 chaveiros", "caixinha", "presente"], "73,90", "Sob encomenda", "kit"),
+  P("T09", "Ferramentas de Orixá em miniatura", T, "Espada de Ogum, alfanje de Iansã, oxê de Xangô, ofá de Oxóssi, xaxará de Omolu, ibiri de Nanã e tridentes.",
+    ["60 a 80 mm", "1 a 2 cores", "escolha a ferramenta"], "14,90", "Sob encomenda", "ferramenta"),
+  P("T13", "Opaxorô decorativo", T, "O cajado de Oxalá em versão decorativa, com base, em branco e prata.",
+    ["120 mm", "1 a 2 cores", "com base"], "24,90", "Sob encomenda", "cajado"),
+  P("T16", "Estatuetas de Orixás e entidades", T, "Figuras em pé com base e nome, de 80 mm a 120 mm. Preto-Velho no banquinho também disponível.",
+    ["80 a 120 mm", "2 a 4 cores", "peça de altar"], "50,90", "Sob encomenda", "estatueta", {aPartir: true}),
+  P("T21", "Placa de ponto riscado", T, "O ponto riscado da sua casa em relevo, emoldurado. Feito a partir do desenho que você enviar.",
+    ["120 mm", "2 cores", "desenho da casa"], "37,90", "Sob encomenda", "placa"),
+  P("T20", "Placa de identificação do terreiro", T, "Nome da casa com símbolo, pronta para parafusar na entrada.",
+    ["150 × 100 mm", "2 a 3 cores", "personalizada"], "53,90", "Sob encomenda", "placa"),
+  P("T22", "Porta-vela seguro", T, "Acompanha copinho metálico ou vela de LED, para usar com segurança em casa ou no terreiro.",
+    ["60 mm", "1 a 2 cores", "com copo metálico ou LED"], "24,90", "Sob encomenda", "vela"),
+  P("T24", "Suporte de guias", T, "Barra de parede ou de mesa com 5 a 7 ganchos para organizar as guias.",
+    ["160 mm", "1 a 2 cores", "parede ou mesa"], "30,90", "Sob encomenda", "suporte"),
+  P("KIT-ALT", "Kit Altar Completo", CG, "Os 7 módulos do Congá Modular com tampas: cachimbo, fumo, guias, pedras, vela, pemba e bandeja. Encaixam lado a lado em colmeia e empilham com firmeza.",
+    ["7 módulos + tampas", "base branca + 1 cor", "PLA e PETG"], "229,90", "Lançamento", "kit", {destaque: true, fotos: {"Foto": "img/mk-kit-alt.jpg"}}),
+  P("KIT-PV", "Kit Preto-Velho", CG, "Berço do cachimbo, guarda-fumo com tampa, porta-vela seguro e bandeja da água, em preto e branco.",
+    ["4 módulos", "preto e branco", "copinho de alumínio incluso"], "139,90", "Lançamento", "kit", {fotos: {"Foto": "img/mk-kit-pv.jpg"}}),
+  P("KIT-CAB", "Kit Caboclo das Matas", CG, "Guarda-fumo para charuto, roda das guias, ninho das pedras e guarda-pemba, em verde e marrom.",
+    ["4 módulos", "verde e marrom", "PLA"], "129,90", "Lançamento", "kit", {fotos: {"Foto": "img/mk-kit-cab.jpg"}}),
+  P("RZ-01", "Berço do Cachimbo", CG, "Apoio diagonal para o cachimbo: berço para o fornilho e canaleta para a piteira. Em PETG; use só com o cachimbo já frio.",
+    ['hexágono 110 mm', '35 mm de altura', 'encaixa ao lado e empilha'], "43,90", "Lançamento", "base"),
+  P("RZ-02", "Guarda-Fumo", CG, "Nicho para maço ou palheiro e lugar para o isqueiro, com tampa de encaixe que mantém o empilhamento.",
+    ['hexágono 110 mm', '35 mm de altura', 'encaixa ao lado e empilha'], "34,90", "Lançamento", "estojo"),
+  P("RZ-03", "Roda das Guias", CG, "Canaleta circular lisa com pino central arredondado: as guias e colares ficam enrolados sem embaraçar nem prender contas.",
+    ['hexágono 110 mm', '35 mm de altura', 'encaixa ao lado e empilha'], "34,90", "Lançamento", "suporte"),
+  P("RZ-04", "Ninho das Pedras", CG, "Três nichos separados de fundo côncavo para cristais, pedras e otás.",
+    ['hexágono 110 mm', '35 mm de altura', 'encaixa ao lado e empilha'], "34,90", "Lançamento", "kit"),
+  P("RZ-05", "Luz Segura", CG, "Porta-vela com copinho de alumínio incluso: a chama nunca toca o plástico. Para tea light ou vela de LED.",
+    ['hexágono 110 mm', '35 mm de altura', 'encaixa ao lado e empilha'], "43,90", "Lançamento", "vela"),
+  P("RZ-06", "Guarda-Pemba", CG, "Compartimento redondo com tampa rente, para pemba, búzios, moedas e ervas secas. A tampa não atrapalha o empilhamento.",
+    ['hexágono 110 mm', '35 mm de altura', 'encaixa ao lado e empilha'], "34,90", "Lançamento", "estojo"),
+  P("RZ-07", "Bandeja da Água", CG, "Bandeja lisa com borda de 6 mm para o copo d'água ou para fechar a pilha.",
+    ["hexágono 110 mm", "borda 6 mm", "encaixa ao lado"], "25,90", "Lançamento", "base"),
+  P("PEC-011", "Caixa de Tarô Fases da Lua", BT, "Caixa com tampa de sobrepor e relevo de fases da lua e estrelas. Cabe um tarô de 74 × 124 mm.",
+    ["interno 74 × 124 × 35 mm", "relevo na tampa", "PLA"], "74,90", "Sob encomenda", "estojo", {fotos: {"Foto": "img/mk-pec-011.jpg"}}),
+  P("PEC-012", "Caixa de Baralho Cigano Rosas e Lua", BT, "Caixa com tampa de encaixe alinhada por fora, cantos arredondados e relevo de rosas e lua. Para baralho cigano de 66 × 92 mm.",
+    ["interno 66 × 92 × 28 mm", "relevo na tampa", "PLA"], "54,90", "Sob encomenda", "estojo", {fotos: {"Foto": "img/mk-pec-012.jpg"}}),
+  P("BT-GL", "Caixa de baralho com nome vazado", BT, "Caixa de baralho com tampa de dobradiça e o nome ou frase que você quiser recortado em stencil. Exemplo: GOOD LOCK.",
+    ["tampa com dobradiça", "texto personalizado", "PLA"], "", "Sob encomenda", "estojo"),
+  P("PEC-007", "Estojo de bolso", TB, "Estojo compacto para 3 cigarros de até 85 mm.",
+    ["3 cigarros", "bolso"], "20,90", "Sob encomenda", "estojo", {fotos: {"Foto": "img/mk-pec-007.jpg"}}),
+  P("LIN-F", "Peixe-esqueleto articulado", AR, "Impresso já montado: as vértebras se mexem na mão. Em PLA seda ou que brilha no escuro.",
+    ["120 mm", "1 cor", "modelo próprio"], "12,90", "Sob encomenda", "peixe"),
+  P("SOB", "Sob medida", EN, "Tem uma ideia, uma imagem ou um arquivo 3D? A gente avalia, modela e imprime com você.",
+    ["até 180 mm por peça", "PLA em várias cores"], "", "Orçamento", "medida")
+];
+
+const LINHAS = [["todos","Todas"],["tabacaria","Tabacaria e Atendimento"],["miniaturas","Miniaturas"]];
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c]));
+
+function waLink(msg) {
+  return CONFIG.whatsapp ? "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(msg) : "";
+}
+
+function renderLinks() {
+  const items = [
+    ["Encomendas pelo WhatsApp", waLink("Olá, RAZAN! Vim pelo catálogo e quero fazer uma encomenda."), true],
+    ["Instagram", CONFIG.instagram ? "https://instagram.com/" + CONFIG.instagram : ""],
+    ["TikTok", CONFIG.tiktok ? "https://www.tiktok.com/@" + CONFIG.tiktok : ""],
+    ["Loja na Shopee", CONFIG.shopee],
+    ["Loja no Mercado Livre", CONFIG.mercadolivre]
+  ];
+  $("#links").innerHTML = items.map(([nome, url, primary]) =>
+    url
+      ? `<a class="link${primary ? " primary" : ""}" href="${esc(url)}" target="_blank" rel="noopener">${nome}<span class="tag">abrir ↗</span></a>`
+      : `<span class="link${primary ? " primary" : ""} off" aria-disabled="true">${nome}<span class="tag">em breve</span></span>`
+  ).join("");
+}
+
+const ICONES = {
+  figura: '<circle cx="60" cy="34" r="11"/><path d="M60 45c-14 0-20 14-24 40h48c-4-26-10-40-24-40z"/><path d="M38 85h44v8H38z"/>',
+  estatueta: '<circle cx="60" cy="28" r="9"/><path d="M60 37c-11 0-16 12-19 38h38c-3-26-8-38-19-38z"/><path d="M34 75h52v12H34z"/><path d="M40 92h40"/>',
+  chaveiro: '<circle cx="60" cy="66" r="24"/><circle cx="60" cy="34" r="7"/><path d="M60 41v1"/><path d="M52 66h16M60 58v16"/>',
+  kit: '<rect x="26" y="40" width="68" height="48" rx="4"/><path d="M26 54h68"/><circle cx="42" cy="70" r="6"/><circle cx="60" cy="70" r="6"/><circle cx="78" cy="70" r="6"/>',
+  abebe: '<circle cx="60" cy="46" r="26"/><circle cx="60" cy="46" r="14"/><path d="M60 72v22M50 94h20"/>',
+  ferramenta: '<path d="M60 20l6 10-6 46-6-46z"/><path d="M46 76h28"/><path d="M60 76v16"/><circle cx="60" cy="96" r="4"/>',
+  cajado: '<path d="M60 26v66"/><circle cx="60" cy="24" r="8"/><path d="M48 44h24M50 56h20"/><path d="M42 92h36"/>',
+  placa: '<rect x="24" y="34" width="72" height="50" rx="4"/><path d="M36 60c8-14 16 14 24 0s16 14 24 0"/><circle cx="32" cy="42" r="2"/><circle cx="88" cy="42" r="2"/>',
+  vela: '<path d="M52 50h16v34H52z"/><path d="M60 30c-5 7-5 12 0 16 5-4 5-9 0-16z"/><path d="M40 84h40l-4 10H44z"/>',
+  suporte: '<path d="M24 40h72"/><path d="M34 40v14a4 4 0 0 0 8 0M52 40v14a4 4 0 0 0 8 0M70 40v14a4 4 0 0 0 8 0"/><path d="M30 34v12M90 34v12"/>',
+  base: '<ellipse cx="60" cy="72" rx="38" ry="14"/><ellipse cx="60" cy="66" rx="12" ry="5"/><path d="M36 62l10-16M84 62l-10-16M52 52v-10M68 52v-10"/>',
+  estojo: '<rect x="30" y="28" width="60" height="62" rx="8"/><path d="M30 44h60"/><path d="M44 54v26M60 54v26M76 54v26"/>',
+  peixe: '<path d="M22 60c14-16 40-16 58 0-18 16-44 16-58 0z"/><path d="M80 60l18-12v24z"/><path d="M40 52v16M50 50v20M60 50v20M70 52v16"/><circle cx="32" cy="58" r="2"/>',
+  medida: '<path d="M30 86l56-56"/><path d="M30 86l8-2-6-6z"/><path d="M40 76l6 6M50 66l6 6M60 56l6 6M70 46l6 6"/>'
+};
+const icone = k => `<svg viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke="#e4c766" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">${ICONES[k] || ICONES.medida}</svg>`;
+
+function card(p) {
+  const views = p.fotos ? Object.keys(p.fotos) : [];
+  const media = p.fotos
+    ? `<img src="${p.fotos[views[0]]}" alt="${esc(p.nome)}, vista ${views[0]}" loading="lazy" data-img>
+       <div class="views" role="group" aria-label="Ângulo da foto">${views.map((v, i) =>
+         `<button type="button" aria-pressed="${i === 0}" data-view="${esc(v)}">${v}</button>`).join("")}</div>`
+    : icone(p.ic);
+  const statusCls = p.status === "Pré-venda" ? " pre" : "";
+  const price = p.preco
+    ? `<span class="price"><small>${p.aPartir ? "a partir de" : "venda direta"}</small>R$ ${p.preco}</span>`
+    : `<span class="price"><small>valor</small>sob consulta</span>`;
+  const msg = `Olá, RAZAN! Tenho interesse em: ${p.nome} (${p.id}).`;
+  const url = waLink(msg);
+  const ask = url
+    ? `<a class="ask" href="${esc(url)}" target="_blank" rel="noopener">Pedir no WhatsApp</a>`
+    : `<button class="ask" type="button" data-msg="${esc(msg)}">Copiar pedido</button>`;
+  return `<article class="card${p.destaque ? " featured" : ""}" data-linha="${p.linha}" data-id="${p.id}">
+    <div class="media"><span class="status${statusCls}">${p.status}</span>${media}</div>
+    <div class="body">
+      <span class="line">${p.linhaNome}</span>
+      <h3>${esc(p.nome)}</h3>
+      <p>${esc(p.texto)}</p>
+      <div class="specs">${p.specs.map(s => `<span>${esc(s)}</span>`).join("")}</div>
+      <div class="buy">${price}${ask}</div>
+    </div>
+  </article>`;
+}
+
+function render(filtro) {
+  $("#grid").innerHTML = PRODUTOS.filter(p => filtro === "todos" || p.linha === filtro).map(card).join("");
+  $("#chips").innerHTML = LINHAS.map(([k, n]) => `<button class="chip" type="button" data-f="${k}" aria-pressed="${k === filtro}">${n}</button>`).join("");
+  try { localStorage.setItem("razan-filtro", filtro); } catch (e) {}
+}
+
+async function copiar(texto, botao, ok) {
+  try { await navigator.clipboard.writeText(texto); botao.textContent = ok; }
+  catch (e) { botao.textContent = "Selecione e copie"; }
+  setTimeout(() => { botao.textContent = botao.dataset.label || "Copiar pedido"; }, 2200);
+}
+
+document.addEventListener("click", e => {
+  const chip = e.target.closest("[data-f]");
+  if (chip) return render(chip.dataset.f);
+  const v = e.target.closest("[data-view]");
+  if (v) {
+    const c = v.closest(".card"), p = PRODUTOS.find(x => x.id === c.dataset.id);
+    c.querySelector("[data-img]").src = p.fotos[v.dataset.view];
+    c.querySelector("[data-img]").alt = `${p.nome}, vista ${v.dataset.view}`;
+    c.querySelectorAll("[data-view]").forEach(b => b.setAttribute("aria-pressed", b === v));
+    return;
+  }
+  const m = e.target.closest("[data-msg]");
+  if (m) copiar(m.dataset.msg, m, "Pedido copiado");
+});
+
+$("#copy").dataset.label = "Copiar link";
+$("#copy").addEventListener("click", e => copiar(CONFIG.catalogo, e.currentTarget, "Link copiado"));
+
+function renderQR() {
+  $("#url").textContent = CONFIG.catalogo;
+  try {
+    const qr = qrcode(0, "M"); qr.addData(CONFIG.catalogo); qr.make();
+    $("#qr").innerHTML = qr.createImgTag(6, 0, "QR Code do catálogo RAZAN");
+  } catch (e) { $("#qr").textContent = "QR indisponível"; }
+}
+
+let inicial = "todos";
+try { inicial = localStorage.getItem("razan-filtro") || "todos"; } catch (e) {}
+if (!LINHAS.some(l => l[0] === inicial)) inicial = "todos";
+renderLinks(); render(inicial); renderQR();
+</script>
+
+</body></html>
